@@ -1,11 +1,14 @@
+import { Metadata } from "next"
+
 import "@/app/globals.css"
-import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
+
+import Providers from "@/providers"
+
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/font"
 import { cn } from "@/lib/utils"
-import { Metadata } from "next"
+import { Header } from "@/components/Header"
+import { TailwindIndicator } from "@/components/tailwind-indicator"
 
 export const metadata: Metadata = {
   title: {
@@ -35,17 +38,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head />
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+            "flex min-h-screen w-full justify-center bg-background font-sans antialiased",
+            fontSans.className
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
+          <Providers>
+            <div className="relative flex min-h-screen w-full max-w-6xl flex-col">
+              <div className="absolute inset-0 bg-sky-400/30 px-4 blur-xl sm:mx-8 sm:px-8 md:mx-12 md:px-12"></div>
+              <div className="relative flex-1 border-l border-r bg-white px-4 dark:bg-zinc-900 sm:mx-8 sm:px-8 md:mx-12 md:px-12">
+                <Header />
+                {children}
+              </div>
             </div>
             <TailwindIndicator />
-          </ThemeProvider>
+          </Providers>
         </body>
       </html>
     </>

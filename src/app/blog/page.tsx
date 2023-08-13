@@ -3,12 +3,12 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { Button, buttonVariants } from "@/components/ui/button"
 
-export default function Home() {
+export default function Projects() {
   return (
     <section className="grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-4xl">
-          Beautifully designed components built with Radix UI and Tailwind CSS.
+          Blog
         </h1>
         <p className="max-w-[700px] text-base text-muted-foreground">
           Accessible and customizable components that you can copy and paste
@@ -16,7 +16,7 @@ export default function Home() {
         </p>
       </div>
       <div className="flex flex-wrap gap-4">
-        <Link
+        {/* <Link
           href={siteConfig.links.docs}
           target="_blank"
           rel="noreferrer"
@@ -31,14 +31,12 @@ export default function Home() {
           className={buttonVariants({ variant: "outline" })}
         >
           GitHub
-        </Link>
-        <Button
-          variant="secondary"
-          className="duration-500 animate-in zoom-in-50"
-        >
-          Secondary
-        </Button>
-        <Button variant="ghost">Ghost</Button>
+        </Link> */}
+        <Button variant="default">Primary</Button>
+        <Button variant="ghost">ghost</Button>
+        <Button variant="link">link</Button>
+        <Button variant="outline">outline</Button>
+        <Button variant="secondary">secondary</Button>
       </div>
     </section>
   )

@@ -3,12 +3,12 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { Button, buttonVariants } from "@/components/ui/button"
 
-export default function Home() {
+export default function Projects() {
   return (
     <section className="grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-4xl">
-          Beautifully designed components built with Radix UI and Tailwind CSS.
+          Projects
         </h1>
         <p className="max-w-[700px] text-base text-muted-foreground">
           Accessible and customizable components that you can copy and paste
